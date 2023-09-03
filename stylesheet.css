@@ -4,6 +4,7 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: "poppins", sans-serif;
+  /* outline: 1px dashed red; */
 }
 
 body {
@@ -198,7 +199,7 @@ img {
   margin-bottom: 4rem;
 }
 
-#services {
+#services, #myskills {
   color: aliceblue;
   font-size: 20px;
   line-height: 1.4;
@@ -216,6 +217,7 @@ img {
 }
 
 .container {
+  width: 100%;
   padding: 90px;
 }
 
@@ -285,15 +287,20 @@ img {
 .services-list div:hover {
   transform: translateY(20px) translateX(-20px);
 }
-
+#skills .container-ext{
+  display: flex;
+  justify-content: space-between;
+}
 section {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;;
+  height: auto;
 }
 
 .container1 {
   width: 600px;
-  height: 500px;
+  height: auto;
   padding: 75px 90px;
   margin-left: 120px;
 }
@@ -438,8 +445,15 @@ section {
     opacity: 1;
   }
 }
+.radial-bars-group{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-gap: 10px;
+}
 
 .radial-bars {
+  position: relative;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -453,7 +467,14 @@ section {
   margin-bottom: 10px;
   position: relative;
 }
-
+.percentage{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
 .radial-bars .radial-bar svg {
   position: absolute;
   top: 50%;
@@ -566,40 +587,46 @@ color: #0ef;
 }
 
 .portfolio-content{
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(359px,auto));
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  padding: 20px;
 }
 
 .row{
-position: relative;
-overflow: hidden;
-border-radius: 8px;
-cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .row img{
-width: 100%;
-border-radius: 8px;
-display: block;
-transition: transform 0.5s;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 12/9;
+  border-radius: 8px;
+  display: block;
+  transition: transform 0.5s;
+  object-fit: cover;
 }
 
 .layer{
-width: 100%;
-height: 0;
-background: linear-gradient(rgba(0,0,0,0.1),#0ef);
-position: absolute;
-border-radius: 8px;
-left: 0;
-bottom: 0;
-overflow: hidden;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-text-align: center;
-padding: 0 40px;
-transition: height 0.5s;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(rgba(0,0,0,0.1),#0ef);
+  position: absolute;
+  border-radius: 8px;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 40px;
+  transition: height 0.5s;
 }
 
 .layer h5{
